@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="/static/css/contact.css"/>
+{% endblock%}
+
+{% block main %}
+<h1 class="page-header">Contact Form</h1>
+<p class="lead">Fill in this form to contact the site owners.</p>
+
+<form method="post">
+
+	<label>Name <span class="required">(Required)</span></label>
+	<p>Please enter your full name.</p>
+	<input type="text" name="name" required/>
+
+	<label>E-mail <span class="required">(Required)</span></label>
+	<p>Please enter your e-mail address.</p>
+	<input type="email" name="email" required/>
+
+	<label>Subject <span class="required">(Required)</span></label>
+	<p>Please enter the subject for your message.</p>
+	<input type="text" name="subject" required/>
+
+	<label>Message <span class="required">(Required)</span></label>
+	<p>Please enter the message you would like to send.</p>
+	<textarea name="message"></textarea>
+
+	<input type="submit" value="Send" />
+</form>
+{% endblock %}

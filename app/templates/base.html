@@ -20,6 +20,24 @@
     {% block css %} {% endblock%}
   </head>
   <body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <!-- Modal -->
+            <div id="myModal" class="modal fade in" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>{{ messages[0] }}</h4>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        {% endif %}
+    {% endwith %}
     <header>
         {% include "header.html" %}
     </header>
@@ -38,6 +56,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/static/js/bootstrap.min.js"></script>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+    <script>$('#myModal').modal('show');</script>
+        {% endif %}
+    {% endwith %}
     {% block js %} {% endblock%}
   </body>
 </html>

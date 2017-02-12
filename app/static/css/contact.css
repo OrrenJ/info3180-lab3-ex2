@@ -1,0 +1,19 @@
+.required {
+	color: red;
+}
+
+input, textarea {
+	display: block;
+	margin-bottom: 20px;
+	border: 1px solid #888888;
+	border-radius: 2px; 
+	padding: 2px;
+}
+
+input[type=submit] {
+	background-color: #2196F3;
+	border: 1px solid #2196F3;
+	border-radius: 4px;
+	color: white;
+	padding: 4px 16px;
+}
